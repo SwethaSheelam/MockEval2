@@ -1,0 +1,12 @@
+[
+    {
+      "id": 1,
+      "title": "Which of the following methods is used to update?",
+      "optionA": "GET",
+      "optionB": "POST",
+      "optionC": "PATCH",
+      "optionD": "DELETE",
+      "correctOption": "C",
+      "reviewStatus": false
+    }
+  ]
