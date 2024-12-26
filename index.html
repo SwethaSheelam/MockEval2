@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="username">UserName:</label>
+        <input type="text" id="username" required>
+        <label for="password">password: </label>
+        <input type="password" id="password" required>
+        <button type="submit">Login</button>
+    </form>
+    <script>
+        async function fetchQuestions() {
+            const response = await fetch(BASE_URL);
+            const questions = await response.json();
+            const grid = document.getElementById('questionsGrid');
+            grid.innerHTML = questions.map(
+              (q) => `
+              <div style="border: 2px solid ${q.reviewStatus ? 'violet' : 'blue'};">
+                <h3>${q.title}</h3>
+                <p>A: ${q.optionA} | B: ${q.optionB} | C: ${q.optionC} | D: ${q.optionD}</p>
+                <button onclick="reviewQuestion(${q.id})">Review Question</button>
+                <button onclick="deleteQuestion(${q.id})">Delete Question</button>
+              </div>
+              `
+            ).join('');
+          }
+          
+
+    </script>
+
+
+    
+</body>
+</html>

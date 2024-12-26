@@ -1,0 +1,1 @@
+const BASE_URL = 'https://your-json-server-url/questions';
